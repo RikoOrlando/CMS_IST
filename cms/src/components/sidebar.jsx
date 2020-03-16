@@ -17,32 +17,32 @@ export default function SideBar() {
                 </div>
                 <div className="sidebarItem">
                     <Link className="link" to="/mainPage/item">
-                        <i class="fas fa-box"></i> <span className="desIcon"> Item </span>
+                        <i className="fas fa-box"></i> <span className="desIcon"> Item </span>
                     </Link>
                 </div>
                 <div className="sidebarItem">
                     <Link className="link" to="/mainPage/provinsi">
-                        <i class="fas fa-globe-asia"></i> <span className="desIcon"> Provinsi </span>
+                        <i className="fas fa-globe-asia"></i> <span className="desIcon"> Provinsi </span>
                     </Link>
                 </div>
                 <div className="sidebarItem">
                     <Link className="link" to="/mainPage/biaya">
-                        <i class="fas fa-dollar-sign"></i> <span className="desIcon"> Biaya </span>
+                        <i className="fas fa-dollar-sign"></i> <span className="desIcon"> Biaya </span>
                     </Link>
                 </div>
                 <div className="sidebarItem">
                     <Link className="link" to="/mainPage/promo">
-                        <i class="fas fa-ad"></i> <span className="desIcon"> Promo </span>
+                        <i className="fas fa-ad"></i> <span className="desIcon"> Promo </span>
                     </Link>
                 </div>
                 <div className="sidebarItem">
                     <Link className="link" to="/mainPage/tabungan">
-                        <i class="fas fa-piggy-bank"></i> <span className="desIcon"> Tabungan </span>
+                        <i className="fas fa-piggy-bank"></i> <span className="desIcon"> Tabungan </span>
                     </Link>
                 </div>
                 <div className="sidebarItem">
                     <Link className="link" to="/mainPage/wisata">
-                        <i class="fas fa-location-arrow"></i> <span className="desIcon"> Wisata </span>
+                        <i className="fas fa-location-arrow"></i> <span className="desIcon"> Wisata </span>
                     </Link>
                 </div>
             </div>

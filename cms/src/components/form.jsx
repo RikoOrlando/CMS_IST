@@ -67,7 +67,7 @@ const validation = (value) => {
     return undefined
 }
 
-let userForm = ({handleSubmit, valid, action, loading}) => {
+let userForm = ({handleSubmit, valid, action, loading, show, togle}) => {
     return (
         <div className="shadow p-3 mb-5 bg-white rounded formRegister">
             <h3 className="titleRegister">{action} Form</h3>
@@ -89,6 +89,7 @@ let userForm = ({handleSubmit, valid, action, loading}) => {
                         <Load/> :
                         <button disabled={!valid} type="submit" className="btn btn-primary">{action}</button>
                     }
+                    <button className="btn btn-light btn-sm btnChange" onClick={togle}>{show}</button>
                 </div>
             </form>
         </div>

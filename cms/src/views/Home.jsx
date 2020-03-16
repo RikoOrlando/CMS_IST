@@ -28,18 +28,12 @@ export default function Home() {
         <div className="containerHome">
             <div className={signUp}>
                 <div>
-                    <FormRegister action="Registration" loading={loading}/>
-                </div>
-                <div className="btnPos">
-                    <button className="togle" onClick={handleClickSignIn}>have Account?</button>
+                    <FormRegister action="Registration" loading={loading} togle={handleClickSignIn} show={'have Account?'}/>
                 </div>
             </div>
             <div className={signIn}>
                 <div>
-                    <FormRegister action="Login" loading={loading}/>
-                </div>
-                <div className="btnPos">
-                    <button className="togle" onClick={handleClickSignOut}>Create Account</button>
+                    <FormRegister action="Login" loading={loading} togle={handleClickSignOut} show={'Create Account'}/>
                 </div>
             </div>
             {

@@ -15,8 +15,13 @@
   margin-top: 30px;
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.btnChange{
+  margin-top: 20px;
 }
 
 .titleRegister{
@@ -144,14 +149,15 @@
 
 .headTable{
   color: white;
-  height: 40px;
+  height: 50px;
+  padding: 12px;
 }
 
 .columnTable{
   height: 100%;
   display: flex;
   align-items: center;
-  font-weight: 500;
+  font-weight: 700;
 }
 
 .bottomCard{
@@ -212,6 +218,7 @@
 
 .rowTable{
   border-bottom: 1px solid rgb(175, 169, 169);
+  padding: 10px;
 }
 
 .form{
