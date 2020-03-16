@@ -1,0 +1,293 @@
+*{
+  font-family: sans-serif;
+}
+
+.formRegister{
+  width: 25vw;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registrationBtnWrap{
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.titleRegister{
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.containerHome{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('./image/bgHome.svg');
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-position-y: bottom;
+}
+
+.bg{
+  display: none;
+}
+
+.mainPageContentWrap{
+  display: flex;
+}
+
+.navBarWrap{ 
+  background-color: #2A3641;
+}
+
+.sideBar{
+  width: 20%;
+  background-color: #35404E;
+  height: 95vh;
+  display: flex;
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.link{
+  color: white;
+}
+
+.sidebarItem{
+  list-style: none;
+  font-size: 20px;
+  margin-bottom: 30px;
+  transition: 0.5s;
+  padding-bottom: 10px;
+}
+
+.logo{
+  color: white!important;
+}
+
+.wrapItemsideBar{
+  padding: 0;
+}
+
+.tableContent{
+  width: 80%;
+}
+
+.deleteItem{
+  margin-right: 30px;
+}
+
+.imageUploaded{
+  height: 200px;
+  width: 200px;
+}
+
+.wrapImageUploade{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.navBarNested{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 20px;
+}
+
+.navigationSign{
+  font-size: 20px;
+  font-weight: 400;
+  color: gray;
+}
+
+.contentWrap{
+  background: #F9F9F9;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  overflow: scroll;
+}
+
+.cardImage{
+  height: 300px;
+  width: 300px;
+}
+
+.cardItem{
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.itemData{
+  width: 100%;
+}
+
+.description{
+  word-wrap: break-word;
+}
+
+.title{
+  word-wrap: break-word;
+}
+
+.headTable{
+  color: white;
+  height: 40px;
+}
+
+.columnTable{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.bottomCard{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.iconDelete{
+  cursor: pointer;
+  margin-right: 20px;
+}
+.iconEdit{
+  cursor: pointer;
+}
+
+.edit{
+  background-color: whitesmoke;
+  z-index: 2;
+  position: absolute;
+  right: 0;
+  width: 400px;
+  height: 95%;
+}
+
+.wrapSideContentEdit{
+  display: flex;
+  flex-direction: row;
+}
+
+.headerEdit{
+  display: flex;
+  padding-right: 20px;
+  padding-top: 20px;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+}
+
+.iconClose{
+  cursor: pointer;
+}
+
+.child{
+  width: 100%;
+}
+
+.validate{
+  color: red!important;
+}
+
+.containerEditForm{
+  padding: 20px;
+}
+.pointer{
+  cursor: pointer;
+}
+
+.rowTable{
+  border-bottom: 1px solid rgb(175, 169, 169);
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 80%;
+  width: 80%;
+}
+
+.none{
+  display: none;
+}
+
+.togle{
+  margin-left: 170px;
+  background: none;
+  border: none;
+  color: blue;
+}
+
+.btnPos{
+  margin-top: -100px;
+}
+
+.menuDrop{
+  background: none;
+  border: none;
+  color: white;
+  margin-left: 20px!Important;
+}
+
+.dropItem{
+  color: white;
+  margin-bottom: 10px;
+  background-color: #35404E;
+}
+
+@media only screen and (max-width: 1000px) {
+  .mainPageContentWrap{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sideBar{
+    width: 100%;
+    background-color: #35404E;
+    height: 10vh;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .tableContent{
+    width: 100%;
+  }
+
+  .sidebarItem{
+    list-style: none;
+    font-size: 20px;
+    transition: 0.5s;
+    padding-bottom: 10px;
+  }
+
+  .wrapItemsideBar{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 15px;
+  }
+
+  .desIcon{
+    display: none;
+  }
+
+  .sidebarItem:hover{
+    color: white;
+  }
+}
