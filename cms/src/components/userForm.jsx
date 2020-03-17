@@ -2,7 +2,6 @@ import React from 'react'
 import {Field, reduxForm} from 'redux-form'
 import {addUserRole} from '../store/actions/data'
 
-let tableDB = null
 const userName = ({input, meta}) => {
     return (
         <>
@@ -51,6 +50,26 @@ const fullName = ({input, meta}) => {
     )
 }
 
+const role = ({input, meta}) => {
+    return (
+        <>
+            <div className="input-group mb-3">
+                <div className="input-group-prepend">
+                    <label className="input-group-text" htmlFor="inputGroupSelect02">Role</label>
+                </div>
+                <select {...input} className="custom-select" id="inputGroupSelect02">
+                    <option defaultValue>Choose...</option>
+                    <option value="admin">admin</option>
+                    <option value="member">member</option>
+                </select>
+            </div>
+            {
+                meta.touched && meta.error ? <p className="validate">{meta.error}</p> : <></>
+            }
+        </>
+    )
+}
+
 const roleName = ({input, meta}) => {
     return (
         <>
@@ -84,10 +103,10 @@ const description = ({input, meta}) => {
 }
 
 
-const onSubmit = (value, dispatch) => {
-    dispatch(addUserRole({input: value, table: tableDB}))
+const onSubmit = (value, dispatch, {table}) => {
+    dispatch(addUserRole({input: value, table}))
     setTimeout(() => {
-        let modal = document.getElementById(`${tableDB}Add`)
+        let modal = document.getElementById(`${table}Add`)
         modal.classList.remove('show')
         modal.setAttribute('aria-hidden', 'true')
         modal.setAttribute('style', 'display: none')
@@ -105,11 +124,25 @@ const validation = (value) => {
     return undefined
 }
 
+const validationUserName = (value,s,{dataUser}) => {
+    const val = dataUser.filter(el => el.userName === value)
+    if(val.length > 0){
+        return 'Username Already Taken'
+    }
+    return undefined
+}
+
+const validateRole = (value) => {
+    if(!value || value === '' || value === 'Choose...'){
+        return 'Please Choose a role'
+    }
+    return undefined
+}
+
 let userForm = ({handleSubmit, valid, table}) => {
-    tableDB = table
     return (
         <div className="p-3 mb-5 bg-white rounded">
-            <h3 className="titleRegister">Registration Form</h3>
+            <h3 className="titleRegister">Add New Data</h3>
             <form onSubmit={handleSubmit}>
                 {
                     table === 'role' ? <>
@@ -118,15 +151,18 @@ let userForm = ({handleSubmit, valid, table}) => {
                         <Field name="description" component={description} validate={validation}/>
                     </>:
                     <>
-                        <Field name="userName" component={userName} validate={validation}/>
+                        <Field name="userName" component={userName} validate={[validation, validationUserName]}/>
                         <br/>
                         <Field name="password" component={password} validate={validation}/>
                         <br/>
                         <Field name="fullName" component={fullName} validate={validation}/>
+                        <br/>
+                        <Field name="role" component={role} validate={validateRole}/>
+
                     </>
                 }
                 <div className="registrationBtnWrap">
-                    <button disabled={!valid} type="submit" className="btn btn-primary">Registration</button>
+                    <button disabled={!valid} type="submit" className="btn btn-primary">Add Data</button>
                 </div>
             </form>
         </div>

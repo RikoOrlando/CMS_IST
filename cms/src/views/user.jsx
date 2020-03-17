@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import Table from '../components/tableUserRole'
-import {useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import FormItem from '../components/userForm'
 import {db} from '../store/config/index'
 import {Switch, Route} from 'react-router-dom'
@@ -8,6 +8,7 @@ import Edit from '../components/sideEditUserRole'
 
 export default function User() {
     const dispatch = useDispatch()
+    const {user} = useSelector(state => state.data)
 
     useEffect(() => {
         return db.collection('user').onSnapshot(function (doc) {
@@ -54,7 +55,7 @@ export default function User() {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <FormItem from="navbar" table="user"/>
+                            <FormItem dataUser={user} table="user"/>
                         </div>
                         <div className="modal-footer">
                         </div>

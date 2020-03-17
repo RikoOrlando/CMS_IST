@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from '../components/navbar'
 import SideBar from '../components/sidebar'
 import {Switch, Route} from 'react-router-dom'
+import AdminRoute from '../customhook/adminRoute'
 import User from './user'
 import Item from './item'
 import Provinsi from './provinsi'
@@ -19,12 +20,12 @@ export default function MainPage() {
                 <SideBar/>
                 <div className="tableContent">
                     <Switch>
-                        <Route path="/mainPage/user">
+                        <AdminRoute path="/mainPage/user">
                             <User/>
-                        </Route>
-                        <Route path="/mainPage/role">
+                        </AdminRoute>
+                        <AdminRoute path="/mainPage/role">
                             <Role/>
-                        </Route>
+                        </AdminRoute>
                         <Route path="/mainPage/item">
                             <Item/>
                         </Route>

@@ -89,7 +89,7 @@ let userForm = ({handleSubmit, valid, action, loading, show, togle}) => {
                         <Load/> :
                         <button disabled={!valid} type="submit" className="btn btn-primary">{action}</button>
                     }
-                    <button className="btn btn-light btn-sm btnChange" onClick={togle}>{show}</button>
+                    {/* <button className="btn btn-light btn-sm btnChange" onClick={togle}>{show}</button> */}
                 </div>
             </form>
         </div>

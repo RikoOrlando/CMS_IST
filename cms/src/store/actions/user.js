@@ -57,7 +57,8 @@ export const Login = (data) => {
                             type: 'SET_LOGIN', 
                             val: {
                                 userName: data.userName, 
-                                fullName: dataDb.docs[0].data().fullName
+                                fullName: dataDb.docs[0].data().fullName,
+                                role: dataDb.docs[0].data().role
                             }
                         }
                     )

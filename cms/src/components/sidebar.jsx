@@ -1,20 +1,27 @@
 import React from 'react'
 import {Link} from "react-router-dom"
+import {useSelector} from 'react-redux'
 
 export default function SideBar() {
+    const {login} = useSelector(state => state.user)
     return (
         <div className="sideBar">
             <div className="wrapItemsideBar">
-                <div className="sidebarItem">
-                    <Link className="link" to="/mainPage/role">
-                        <i className="fas fa-dice-d6"></i> <span className="desIcon"> Role </span>
-                    </Link>
-                </div>
-                <div className="sidebarItem">
-                    <Link className="link" to="/mainPage/user">
-                        <i className="fas fa-address-book"></i> <span className="desIcon"> User </span>
-                    </Link>
-                </div>
+                {
+                    login.role === 'admin' ?
+                    <>
+                        <div className="sidebarItem">
+                            <Link className="link" to="/mainPage/role">
+                                <i className="fas fa-dice-d6"></i> <span className="desIcon"> Role </span>
+                            </Link>
+                        </div>
+                        <div className="sidebarItem">
+                            <Link className="link" to="/mainPage/user">
+                                <i className="fas fa-address-book"></i> <span className="desIcon"> User </span>
+                            </Link>
+                        </div>
+                    </> : <></>
+                }
                 <div className="sidebarItem">
                     <Link className="link" to="/mainPage/item">
                         <i className="fas fa-box"></i> <span className="desIcon"> Item </span>

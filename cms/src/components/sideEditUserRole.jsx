@@ -7,7 +7,7 @@ export default function EditItem() {
     const history = useHistory().location.pathname.split('/')
     const beforePath = `/${history[1]}/${history[2]}`
     const [animated, setAnimated] = useState('slideInRight')
-    const {editData} = useSelector(state => state.data)
+    const {editData, user} = useSelector(state => state.data)
     const [path, setPath] = useState(false)
     const handleClosed = () => {
         setAnimated('slideOutRight')
@@ -25,6 +25,7 @@ export default function EditItem() {
                     data={editData}
                     done={handleClosed}
                     table={history[2]}
+                    userData={user}
                 />
             </div>
             {
