@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Field, reduxForm} from 'redux-form'
+import {Field, reduxForm, reset} from 'redux-form'
 import {fireStorage} from '../store/config/index'
 import {addNewData} from '../store/actions/data'
 
@@ -23,6 +23,7 @@ const onSubmit = (val, dispatch) => {
         document.body.removeChild(modalsBackdrops[i]);
         }
     }, 500)
+    dispatch(reset('itemForm'))
 }
 
 const title = ({input, meta}) => {
@@ -120,6 +121,11 @@ const FormItem  = ({handleSubmit, valid, validateInput}) => {
         }
     }
 
+    const resetForm = () => {
+        setImageUploaded('')
+        document.getElementById('inputImage').value = ""
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <Field name="title" component={title} validate={validateTitle}/>
@@ -128,7 +134,7 @@ const FormItem  = ({handleSubmit, valid, validateInput}) => {
             }
             <div className="form-group">
                 <label>Image</label> <br/>
-                <input type="file" className="form-control" onChange={handleChange.bind(this)}/>
+                <input type="file" id="inputImage" className="form-control" onChange={handleChange.bind(this)}/>
                 {
                     validateImage ? <small className="validate form-text text-muted">{`max ${size}kb and ${width} x ${height}`}</small> : <></>
                 }    
@@ -141,7 +147,7 @@ const FormItem  = ({handleSubmit, valid, validateInput}) => {
                 </div>
             </div>
             <span>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary" onClick={resetForm} disabled={!valid}>Submit</button>
             </span>
         </form>
     )

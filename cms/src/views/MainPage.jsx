@@ -11,6 +11,7 @@ import Promo from './promo'
 import Tabungan from './tabungan'
 import Wisata from './wisata'
 import Role from './role'
+import Idle from '../customhook/idleTimer'
 
 export default function MainPage() {
     return (
@@ -47,6 +48,7 @@ export default function MainPage() {
                     </Switch>
                 </div>
             </div>
+            <Idle/>
         </div>
     )
 }

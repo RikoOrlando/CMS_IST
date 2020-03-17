@@ -1,5 +1,5 @@
 import React from 'react'
-import {Field, reduxForm} from 'redux-form'
+import {Field, reduxForm, reset} from 'redux-form'
 import {addUserRole} from '../store/actions/data'
 
 const userName = ({input, meta}) => {
@@ -115,6 +115,7 @@ const onSubmit = (value, dispatch, {table}) => {
         document.body.removeChild(modalsBackdrops[i]);
         }
     }, 500)
+    dispatch(reset('addUserRole'))
 }
 
 const validation = (value) => {
