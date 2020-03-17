@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// console.log = console.warn = console.error = () => {}
+console.log = console.warn = console.error = () => {}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
